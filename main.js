@@ -1,6 +1,7 @@
 const bodyElement = document.querySelector('body')
 
 const inputElement = document.createElement('input')
+inputElement.setAttribute('type', 'Text');
 bodyElement.append(inputElement)
 
 const removebuttonElement = document.createElement('button')
@@ -8,9 +9,13 @@ let remove = document.createTextNode("Remove");
 removebuttonElement.appendChild(remove);  
 bodyElement.append(removebuttonElement)
 
-removebuttonElement.addEventListener ("click", function(){
-    
-})
+removebuttonElement.addEventListener ("click", 
+    function() {
+        let elementSearched = inputElement.value
+        bodyElement.removeChild(elementSearched)
+        console.log(elementSearched)
+        // elementSearched.remove(elementSearched);
+    })
 
 const buttonElement = document.createElement('button')
 let clear = document.createTextNode("Clear");
@@ -20,8 +25,9 @@ bodyElement.append(buttonElement)
 const mainElement = document.createElement('main')
 bodyElement.append(mainElement)
 
-buttonElement.addEventListener ("click", function(){
-    mainElement.remove(mainElement)
+buttonElement.addEventListener ("click", 
+    function(){
+        mainElement.remove(mainElement)
 })
 
 const imgElement = document.createElement('img')
